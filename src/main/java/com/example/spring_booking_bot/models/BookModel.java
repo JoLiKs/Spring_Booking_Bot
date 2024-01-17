@@ -1,9 +1,10 @@
 package com.example.spring_booking_bot.models;
 
 import com.example.spring_booking_bot.helpers.DoctorEnum;
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "book_list")

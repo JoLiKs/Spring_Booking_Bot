@@ -4,7 +4,7 @@ import com.example.spring_booking_bot.helpers.DoctorEnum;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 @Table(name = "telegram_user")
 @Entity
 @Data

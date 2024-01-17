@@ -18,8 +18,11 @@ public class UserHelper {
         helper.userRepo.save(t);
     }
     public static UserModel findUser(String tgId){
-    UserModel userModel = new UserModel();
-    userModel = helper.userRepo.findUserModelByTgId(tgId);
+
+    UserModel userModel = helper.userRepo.findUserModelById(Long.parseLong(tgId));
+    if (userModel == null) {
+        return new UserModel();
+    }
     return userModel;
     }
 }
