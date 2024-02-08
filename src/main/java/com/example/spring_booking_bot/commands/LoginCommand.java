@@ -33,7 +33,7 @@ public class LoginCommand implements WorkerCommand{
     }
         UserModel userModel = new UserModel();
             userModel.setUsername(update.getMessage().getFrom().getUserName());
-            userModel.setTelegram_id(update.getMessage().getFrom().getId().toString());
+            userModel.setTgId(update.getMessage().getFrom().getId().toString());
             if (update.getMessage().getText().equals("Остаться анонимом")){
           sendMessage.setText("Пользователь сохранён");
                 UserHelper.saveUser(userModel);

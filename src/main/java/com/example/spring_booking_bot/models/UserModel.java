@@ -17,7 +17,7 @@ public class UserModel {
     String username;
 
     @Column(name = "telegram_id")
-    String telegram_id;
+    String tgId;
 
     @Column(name = "person_name")
     String person_name;

@@ -24,6 +24,7 @@ public class GinekologBookCommand implements WorkerCommand {
             return null;
         }
         UserModel userModel = UserHelper.findUser(update.getMessage().getFrom().getId().toString());
+        userModel.setTgId(String.valueOf(update.getMessage().getFrom().getId()));
         userModel.setDoctorEnum(DoctorEnum.GINEKOLOG);
         UserHelper.saveUser(userModel);
         return sendDefaultMessage(update);

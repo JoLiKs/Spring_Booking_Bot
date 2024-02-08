@@ -24,6 +24,7 @@ public class TerapevtBookCommand implements WorkerCommand {
             return null;
         }
         UserModel userModel = UserHelper.findUser(update.getMessage().getFrom().getId().toString());
+        userModel.setTgId(String.valueOf(update.getMessage().getFrom().getId()));
         userModel.setDoctorEnum(DoctorEnum.TERAPEVT);
         UserHelper.saveUser(userModel);
         return sendDefaultMessage(update);

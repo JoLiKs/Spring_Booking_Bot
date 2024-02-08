@@ -27,8 +27,8 @@ public class ChooseTime implements WorkerCommand {
             return null;
         }
         BookModel bookModel = new BookModel();
-        bookModel.setTime(update.getMessage().getText().toString());
-        UserModel userModel = new UserModel();
+        bookModel.setTime(update.getMessage().getText());
+        UserModel userModel;
         userModel = UserHelper.findUser(update.getMessage().getFrom().getId().toString());
         bookModel.setTgId(update.getMessage().getFrom().getId().toString());
         bookModel.setDoctorEnum(userModel.getDoctorEnum());

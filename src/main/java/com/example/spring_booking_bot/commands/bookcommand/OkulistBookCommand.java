@@ -23,6 +23,7 @@ public class OkulistBookCommand implements WorkerCommand {
             return null;
         }
         UserModel userModel = UserHelper.findUser(update.getMessage().getFrom().getId().toString());
+        userModel.setTgId(String.valueOf(update.getMessage().getFrom().getId()));
         userModel.setDoctorEnum(DoctorEnum.OKULIST);
         UserHelper.saveUser(userModel);
         return sendDefaultMessage(update);

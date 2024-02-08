@@ -19,7 +19,7 @@ public class UserHelper {
     }
     public static UserModel findUser(String tgId){
 
-    UserModel userModel = helper.userRepo.findUserModelById(Long.parseLong(tgId));
+    UserModel userModel = helper.userRepo.findUserModelByTgId(tgId);
     if (userModel == null) {
         return new UserModel();
     }
