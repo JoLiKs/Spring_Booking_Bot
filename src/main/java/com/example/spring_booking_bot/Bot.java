@@ -55,9 +55,11 @@ public class Bot extends TelegramLongPollingBot {
         list.add(new LorBookCommand());
         list.add(new OkulistBookCommand());
         list.add(new ChooseTime());
+
         for (WorkerCommand w: list){
-            if (w.start(update)!= null){
-                sendMessage = w.start(update);
+            SendMessage res = w.start(update);
+            if (res!= null){
+                sendMessage = res;
                 break;
             }
         }
